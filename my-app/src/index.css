@@ -1,0 +1,78 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #1e1e2e;
+  --foreground: #e0e0e0;
+}
+
+/* -------------------- TIPOGRAFÍA Y BASE -------------------- */
+@layer base {
+  html {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+
+  a {
+    font-weight: 500;
+    text-decoration: none;
+    color: theme('colors.blue.400');
+  }
+
+  a:hover {
+    color: theme('colors.blue.500');
+  }
+}
+
+/* -------------------- BOTONES -------------------- */
+@layer components {
+  button {
+    border-radius: 0.5rem; /* 8px */
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+
+  button:hover {
+    border-color: theme('colors.blue.400');
+  }
+
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+
+/* -------------------- MODOS CLARO / OSCURO -------------------- */
+@layer base {
+
+html.dark {
+  --background: #1e1e2e;
+  --foreground: #e0e0e0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+}
